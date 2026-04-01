@@ -1,0 +1,12 @@
+---
+title: "R_notebook"
+output: html_document"
+---
+
+
+```{r}
+library(tidyverse)
+df <- read.csv("ecommerce_orders.csv")
+head(df)
+```
+
