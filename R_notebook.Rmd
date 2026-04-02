@@ -2,11 +2,54 @@
 title: "R_notebook"
 output: html_document"
 ---
+## Kapitel 1
+Här är kapitel 1
+```{r}
+library(tidyverse)
+
+df <- read_csv("ecommerce_orders.csv")
+glimpse(df)
+head(df)
+```
+Här syns storleken 1000 observationer, 16 kolumner (variabler) och olika datatyperna.
+
+
+
+nr 1 Vilka produktkategorier verkar driva högst försäljning?
+nr 2 Hur skiljer sig ordervärde mellan olika kundsegment?
+nr 3 Försäljning över tid: totalt, regionalt och kundtyp?
+
+För dessa frågorna - viktiga variabler
+orderdatum, customer_type och segment, produktkategori, quantity, unit_price och discount
+
+*Nya variabler att skapa*
+glimpse(df_clean %>% select(discounted_price, discounted_orderval))
 
 
 ```{r}
-library(tidyverse)
-df <- read.csv("ecommerce_orders.csv")
-head(df)
+unique(df$discount_pct)
+names(df)
+colSums(is.na(df))
+
+source("script1.R")
+glimpse(df_clean)
+
 ```
+
+
+
+
+
+
+# Dataförståelse
+# Datastädning
+# Statistiska sammanfattningar
+```{r}
+df_clean %>% 
+  group_by() %>% 
+  summarize
+```
+# Visualiseringar
+# Slutsatser
+
 
