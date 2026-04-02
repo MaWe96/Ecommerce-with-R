@@ -6,7 +6,13 @@ output: html_document"
 
 ```{r}
 library(tidyverse)
-df <- read.csv("ecommerce_orders.csv")
+df <- read_csv("ecommerce_orders.csv")
 head(df)
+
+```
+```{r}
+source("Marcus_script.R")
+unique(df$campaign_source)
+colSums(is.na(df))
 ```
 
