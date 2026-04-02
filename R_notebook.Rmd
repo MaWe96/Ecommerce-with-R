@@ -27,25 +27,12 @@ glimpse(df_clean %>% select(discounted_price, discounted_orderval))
 
 
 ```{r}
-<<<<<<< HEAD
-library(tidyverse)
-df <- read_csv("ecommerce_orders.csv")
-head(df)
-
-```
-```{r}
-source("Marcus_script.R")
-unique(df$campaign_source)
-colSums(is.na(df))
-=======
 unique(df$discount_pct)
 names(df)
 colSums(is.na(df))
-
 source("script1.R")
 glimpse(df_clean)
 
->>>>>>> main
 ```
 
 
