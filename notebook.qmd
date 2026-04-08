@@ -35,13 +35,14 @@ glimpse(df_clean)
 ## Statistiska sammanfattningar
 ### nr 1 Vilka produktkategorier verkar driva högst försäljning?
 ```{r}
-data_clean <- df_clean # olika namn, började som df_clean
+
 source("summary_vis.R")
 
-summarize_orders
-plot_boxplot
-# ggplot kunder per segment?
-plot_avg_bar
+summarize_orders(df_clean, product_category, discounted_orderval)
+plot_boxplot(df_clean, product_category, discounted_orderval)
+
+summarize_orders(df_clean, customer_segment, discounted_orderval)
+plot_avg_bar(df_clean, customer_segment, discounted_orderval)
 
 ```
 
