@@ -26,7 +26,7 @@ unique(df$customer_segment)
 ```
 
 ```{r}
-source("script1.R") # Delade skärm och vi gjorde städning script.
+source("script1.R") # Delade skärm och Martin skrev städning script.
 glimpse(df_clean) # Skapar variablerna discounted_price & discounted_orderval.
 ```
 
@@ -35,18 +35,7 @@ glimpse(df_clean) # Skapar variablerna discounted_price & discounted_orderval.
 ### 1. Vilka produktkategorier verkar driva högst försäljning?
 
 ```{r}
-<<<<<<< HEAD
 source("summary_vis.R") # Vera's script
-=======
-
-source("summary_vis.R")
-
-summarize_orders(df_clean, product_category, discounted_orderval)
-plot_boxplot(df_clean, product_category, discounted_orderval)
-
-summarize_orders(df_clean, customer_segment, discounted_orderval)
-plot_avg_bar(df_clean, customer_segment, discounted_orderval)
->>>>>>> origin/main
 
 summarize_orders(df_clean, product_category, discounted_orderval)
 plot_boxplot(df_clean, product_category, discounted_orderval)
@@ -62,13 +51,18 @@ plot_avg_bar(df_clean, customer_segment, discounted_orderval)
 ### 3. Försäljning över tid: totalt, regionalt och kundtyp?
 
 ```{r}
-
+source("vis_3.R") # Carina's script
+ordermonth
+plot1 # total
 ```
 
 ```{r}
-
+monthregion
+plot2 # region
 ```
 
-## Visualiseringar
+```{r}
+monthcustomer
+plot3 # customer type
+```
 
-## Slutsatser
