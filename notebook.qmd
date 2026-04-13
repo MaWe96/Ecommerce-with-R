@@ -6,19 +6,18 @@ format: html
 ## Dataläsning
 
 ```{r}
-source("load_data.R")
+source("load_data.R") # Marcus script.
 
 df <- load_data("ecommerce_orders.csv")
 ```
 
 Här syns storleken 1000 observationer, 16 kolumner (variabler) och olika datatyperna.
 
-För dessa frågorna viktiga variabler orderdatum, customer_type och segment, produktkategori, quantity, unit_price och discount
+För de valda frågeställningarna bedöms följande variabler vara viktiga: `order_date`, `customer_type` och `customer_segment`, `product_category`, `quantity`, `unit_price` och `discount_pct`.
 
-Vi sätter 0 när `discount_pct` saknar värde.
+Vi sätter 0 när `discount_pct` saknar värde, i städning script 1. Dessutom skapas variablerna `discounted_price`, `discounted_orderval`.
 
-*Nya variabler att skapa* 
-<!-- glimpse(df_clean %\>% select(discounted_price, discounted_orderval)) -->
+## Datastädning
 
 ```{r}
 # För att se hur datan ska städas
@@ -27,14 +26,18 @@ unique(df$customer_segment)
 ```
 
 ```{r}
-source("script1.R")
-glimpse(df_clean)
+source("script1.R") # Delade skärm och vi gjorde städning script.
+glimpse(df_clean) # Skapar variablerna discounted_price & discounted_orderval.
 ```
 
-
 ## Statistiska sammanfattningar
-### nr 1 Vilka produktkategorier verkar driva högst försäljning?
+
+### 1. Vilka produktkategorier verkar driva högst försäljning?
+
 ```{r}
+<<<<<<< HEAD
+source("summary_vis.R") # Vera's script
+=======
 
 source("summary_vis.R")
 
@@ -43,55 +46,28 @@ plot_boxplot(df_clean, product_category, discounted_orderval)
 
 summarize_orders(df_clean, customer_segment, discounted_orderval)
 plot_avg_bar(df_clean, customer_segment, discounted_orderval)
+>>>>>>> origin/main
 
+summarize_orders(df_clean, product_category, discounted_orderval)
+plot_boxplot(df_clean, product_category, discounted_orderval)
 ```
 
+### 2. Hur skiljer sig ordervärde mellan olika kundsegment?
 
+```{r}
+summarize_orders(df_clean, customer_segment, discounted_orderval)
+plot_avg_bar(df_clean, customer_segment, discounted_orderval)
+```
 
-### nr 2 Hur skiljer sig ordervärde mellan olika kundsegment?
+### 3. Försäljning över tid: totalt, regionalt och kundtyp?
+
 ```{r}
 
 ```
 
-
-
-### nr 3 Försäljning över tid: totalt, regionalt och kundtyp?
 ```{r}
-names(df_clean)
-
-
-
-
-q3 <- df_clean %>% 
-  mutate(
-    month = as.Date(format(order_date, "%y-%m-01"))
-  ) %>% 
-  group_by(month) %>% 
-  summarize(paid = sum(discounted_orderval))
-
-ggplot(q3, aes(month, y=paid))+
-  geom_line()
-
-# "region"
-# "customer_type" 
 
 ```
-
-```{r}
-q3region <- df_clean %>% 
-  mutate(
-    month = as.Date(format(order_date, "%y-%m-01"))
-  ) %>% 
-  group_by(region,month) %>%  # Error
-  summarize(paid = sum(discounted_orderval))
-
-
-ggplot(q3region, aes(month, y=paid))+
-  geom_line()
-# .groups = "drop"
-```
-
-
 
 ## Visualiseringar
 
