@@ -35,7 +35,18 @@ glimpse(df_clean) # Skapar variablerna discounted_price & discounted_orderval.
 ### 1. Vilka produktkategorier verkar driva högst försäljning?
 
 ```{r}
+<<<<<<< HEAD
 source("summary_vis.R") # Vera's script
+=======
+
+source("summary_vis.R")
+
+summarize_orders(df_clean, product_category, discounted_orderval)
+plot_boxplot(df_clean, product_category, discounted_orderval)
+
+summarize_orders(df_clean, customer_segment, discounted_orderval)
+plot_avg_bar(df_clean, customer_segment, discounted_orderval)
+>>>>>>> origin/main
 
 summarize_orders(df_clean, product_category, discounted_orderval)
 plot_boxplot(df_clean, product_category, discounted_orderval)

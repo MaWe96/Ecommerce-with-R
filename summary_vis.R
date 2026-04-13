@@ -25,6 +25,7 @@ plot_boxplot <- function(data, group_var, value_var) {
 }
 
 
+<<<<<<< HEAD
 ggplot(df_clean, aes(x = customer_segment)) +
   geom_bar() +
   labs(
@@ -33,6 +34,8 @@ ggplot(df_clean, aes(x = customer_segment)) +
     y = "Antal kunder"
   )
 
+=======
+>>>>>>> origin/main
 plot_avg_bar <- function(data, group_var, value_var) {
   data %>%
     group_by({{group_var}}) %>%
