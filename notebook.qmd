@@ -6,20 +6,20 @@ format: html
 ## Dataläsning
 
 ```{r}
-source("load_data.R")
+source("load_data.R") # Marcus script.
 
 df <- load_data("ecommerce_orders.csv")
 ```
 
 Här syns storleken 1000 observationer, 16 kolumner (variabler) och olika datatyperna.
 
-För dessa frågorna viktiga variabler orderdatum, customer_type och segment, produktkategori, quantity, unit_price och discount
+För de valda frågeställningarna bedöms följande variabler vara viktiga:
+`order_date`, `customer_type` och `customer_segment`, `product_category`, `quantity`, `unit_price` och `discount_pct`.
 
-Vi sätter 0 när `discount_pct` saknar värde.
+Vi sätter 0 när `discount_pct` saknar värde, i städning script 1. Dessutom skapas variablerna `discounted_price`, `discounted_orderval`.
 
-*Nya variabler att skapa* 
-<!-- glimpse(df_clean %\>% select(discounted_price, discounted_orderval)) -->
 
+## Datastädning
 ```{r}
 # För att se hur datan ska städas
 unique(df$customer_segment)
@@ -27,29 +27,26 @@ unique(df$customer_segment)
 ```
 
 ```{r}
-source("script1.R")
-glimpse(df_clean)
+source("script1.R") # Delade skärm och vi gjorde städning script.
+glimpse(df_clean) # Skapar variablerna discounted_price & discounted_orderval.
 ```
 
 
 ## Statistiska sammanfattningar
-### nr 1 Vilka produktkategorier verkar driva högst försäljning?
+### 1. Vilka produktkategorier verkar driva högst försäljning?
 ```{r}
-data_clean <- df_clean # olika namn, började som df_clean
-source("summary_vis.R")
+source("summary_vis.R") # Vera's script
 
-summarize_orders
-plot_boxplot
-# ggplot kunder per segment?
-plot_avg_bar
-
+summarize_orders(df_clean, product_category, discounted_orderval)
+plot_boxplot(df_clean, product_category, discounted_orderval)
 ```
 
 
 
-### nr 2 Hur skiljer sig ordervärde mellan olika kundsegment?
+### 2. Hur skiljer sig ordervärde mellan olika kundsegment?
 ```{r}
-
+summarize_orders(df_clean, customer_segment, discounted_orderval)
+plot_avg_bar(df_clean, customer_segment, discounted_orderval)
 ```
 
 
