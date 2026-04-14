@@ -41,12 +41,20 @@ summarize_orders(df_clean, product_category, discounted_orderval)
 plot_boxplot(df_clean, product_category, discounted_orderval)
 ```
 
+Electronics ses driva högst försäljning, då den både har högst genomsnittligt ordervärde och hög median jämfört med övriga kategorier. Därefter följer Sports och Home. Beauty ligger tydligt lägst.
+
+Det finns stor spridning inom Electronica och Sports, vilket tyder på att ordervärdena varierar mycket.
+
 ### 2. Hur skiljer sig ordervärde mellan olika kundsegment?
 
 ```{r}
 summarize_orders(df_clean, customer_segment, discounted_orderval)
 plot_avg_bar(df_clean, customer_segment, discounted_orderval)
 ```
+
+Small Business har högst genomsnittligt ordervärde vilket tyder på att de i snitt gör större köp än övriga segment. Consumer ligger dock nära Small Business i både medel och median, Consumer har också flest ordrar vilket tyder på att det är en viktig intäktsdrivare.
+
+Stor skillnad mellan medel och median vilket visar på en högerskev fördelning, att ett fåtal ordrar drar upp snittet.
 
 ### 3. Försäljning över tid: totalt, regionalt och kundtyp?
 
@@ -65,4 +73,3 @@ plot2 # region
 monthcustomer
 plot3 # customer type
 ```
-
