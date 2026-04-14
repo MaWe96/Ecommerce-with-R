@@ -11,7 +11,8 @@ summarize_orders <- function(data, group_var, value_var) {
       sd = sd({{value_var}}, na.rm = TRUE),
       n = n(),
       .groups = "drop"
-    )
+    ) %>%
+    arrange(desc(avg))
 }
 
 plot_boxplot <- function(data, group_var, value_var) {
