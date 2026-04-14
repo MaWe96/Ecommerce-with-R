@@ -1,0 +1,75 @@
+---
+title: "notebook"
+format: html
+---
+
+## Dataläsning
+
+```{r}
+source("load_data.R") # Marcus script.
+
+df <- load_data("ecommerce_orders.csv")
+```
+
+Här syns storleken 1000 observationer, 16 kolumner (variabler) och olika datatyperna.
+
+För de valda frågeställningarna bedöms följande variabler vara viktiga: `order_date`, `customer_type` och `customer_segment`, `product_category`, `quantity`, `unit_price` och `discount_pct`.
+
+Vi sätter 0 när `discount_pct` saknar värde, i städning script 1. Dessutom skapas variablerna `discounted_price`, `discounted_orderval`.
+
+## Datastädning
+
+```{r}
+# För att se hur datan ska städas
+unique(df$customer_segment)
+# names(df)
+```
+
+```{r}
+source("script1.R") # Delade skärm och Martin skrev städning script.
+glimpse(df_clean) # Skapar variablerna discounted_price & discounted_orderval.
+```
+
+## Statistiska sammanfattningar
+
+### 1. Vilka produktkategorier verkar driva högst försäljning?
+
+```{r}
+source("summary_vis.R") # Vera's script
+
+summarize_orders(df_clean, product_category, discounted_orderval)
+plot_boxplot(df_clean, product_category, discounted_orderval)
+```
+
+Electronics ses driva högst försäljning, då den både har högst genomsnittligt ordervärde och hög median jämfört med övriga kategorier. Därefter följer Sports och Home. Beauty ligger tydligt lägst.
+
+Det finns stor spridning inom Electronica och Sports, vilket tyder på att ordervärdena varierar mycket.
+
+### 2. Hur skiljer sig ordervärde mellan olika kundsegment?
+
+```{r}
+summarize_orders(df_clean, customer_segment, discounted_orderval)
+plot_avg_bar(df_clean, customer_segment, discounted_orderval)
+```
+
+Small Business har högst genomsnittligt ordervärde vilket tyder på att de i snitt gör större köp än övriga segment. Consumer ligger dock nära Small Business i både medel och median, Consumer har också flest ordrar vilket tyder på att det är en viktig intäktsdrivare.
+
+Stor skillnad mellan medel och median vilket visar på en högerskev fördelning, att ett fåtal ordrar drar upp snittet.
+
+### 3. Försäljning över tid: totalt, regionalt och kundtyp?
+
+```{r}
+source("vis_3.R") # Carina's script
+ordermonth
+plot1 # total
+```
+
+```{r}
+monthregion
+plot2 # region
+```
+
+```{r}
+monthcustomer
+plot3 # customer type
+```

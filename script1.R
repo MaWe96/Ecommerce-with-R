@@ -1,3 +1,5 @@
+library(tidyverse)
+df <- read_csv("ecommerce_orders.csv")
 df_clean <- df %>% 
   mutate(
     order_id = str_replace(order_id, "O", ""),
@@ -8,7 +10,7 @@ df_clean <- df %>%
     customer_id = str_replace(customer_id, "C", ""),
     customer_id = as.integer(customer_id),
     
-    customer_segment = str(customer_segment),
+    customer_segment = str_trim(customer_segment),
     customer_type = str_trim(customer_type),
     
     region = str_trim(region),
