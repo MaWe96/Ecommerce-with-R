@@ -73,3 +73,16 @@ plot2 # region
 monthcustomer
 plot3 # customer type
 ```
+
+3: (månads grupperad) - månad 7 och 1 har högst total sales, sen 06,05,04. 
+Minst sales (minst först): 10, 09, 11, 03, 02, 08, 12
+
+total försäljning linjegraf: cykliska intäkter, dipp i feb och oktober.
+i region linjegraf:  köper north mest totalt, peak jan, maj, juli (south lägst, east +west mitten)
+i customer_type köper nya & återvändande kunder mest i maj, juni juli (alla mkt i Jan).
+
+customer type=fråga 3, customer segment=fråga 2
+
+
+
+

@@ -42,7 +42,7 @@ plot1 <- ggplot(
 ) +
   geom_line() +
   labs(
-    title = "Försäljning över tid per region",
+    title = "Försäljning över tid",
     x = "Månad",
     y = "Försäljning"
   )
