@@ -1,6 +1,6 @@
 library(tidyverse)
 
-source("script1.R")
+source("clean_and_CreateVariables.R")
 
 summarize_orders <- function(data, group_var, value_var) {
   data %>%

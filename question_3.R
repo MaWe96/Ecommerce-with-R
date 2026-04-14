@@ -2,7 +2,7 @@
 
 library(tidyverse)
 
-source("script1.R")
+source("clean_and_CreateVariables.R")
 
 df_clean <- df_clean %>% 
   mutate(
