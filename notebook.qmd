@@ -15,7 +15,7 @@ Här syns storleken 1000 observationer, 16 kolumner (variabler) och olika dataty
 
 För de valda frågeställningarna bedöms följande variabler vara viktiga: `order_date`, `customer_type` och `customer_segment`, `product_category`, `quantity`, `unit_price` och `discount_pct`.
 
-Vi sätter 0 när `discount_pct` saknar värde, i städning script 1. Dessutom skapas variablerna `discounted_price`, `discounted_orderval`.
+Vi sätter 0 när `discount_pct` saknar värde, i städning script 1. Dessutom skapas variablerna `discounted_price`, `discounted_orderval`. Saknade värden för stad, kampanjkälla, betalmetod förbises då de inte är med i analys.
 
 ## Datastädning
 
@@ -63,26 +63,18 @@ source("vis_3.R") # Carina's script
 ordermonth
 plot1 # total
 ```
+Säsongmönster för helheten visar toppar i januari och juli. Dippar sker runt mars och oktober, där en ökning verkar starta emot december vilket skulle bemöta januaris topp, ifall nästa år upprepar trenden.
+
 
 ```{r}
 monthregion
 plot2 # region
 ```
+Som total trend är mars och oktober låga punkter för flesta regioner. Norr tycks leda, och syd falla bakom.
 
 ```{r}
 monthcustomer
 plot3 # customer type
 ```
-
-3: (månads grupperad) - månad 7 och 1 har högst total sales, sen 06,05,04. 
-Minst sales (minst först): 10, 09, 11, 03, 02, 08, 12
-
-total försäljning linjegraf: cykliska intäkter, dipp i feb och oktober.
-i region linjegraf:  köper north mest totalt, peak jan, maj, juli (south lägst, east +west mitten)
-i customer_type köper nya & återvändande kunder mest i maj, juni juli (alla mkt i Jan).
-
-customer type=fråga 3, customer segment=fråga 2
-
-
-
+Nya och återvändande kunder spenderar mest runt sommarmånaderna, och januari har hög försäljning, som slutet på året kanske åter stiger till, om mönstret upprepar. Kundsegment är som konsumenter och småföretag är en annan variabel som vore intressant att se tidsmönster på.
 
