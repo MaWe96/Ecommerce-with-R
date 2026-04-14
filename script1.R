@@ -1,5 +1,7 @@
-library(tidyverse)
-df <- read_csv("ecommerce_orders.csv")
+source("load_data.R") # Marcus script.
+
+df <- load_data("ecommerce_orders.csv")
+
 df_clean <- df %>% 
   mutate(
     order_id = str_replace(order_id, "O", ""),
