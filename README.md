@@ -12,11 +12,20 @@ Det här projektet analyserar e-handelsdata
 
 -   `notebook.R` innehåller hela analysen
 
-### Frågor:
+## Frågor:
 
 1.  Vilka produktkategorier verkar driva högst försäljning?
 2.  Hur skiljer sig ordervärde mellan olika kundsegment?
 3.  Försäljning över tid: totalt, regionalt och kundtyp?
+
+## Fördelat ansvar
+| Medlem | Ansvar |
+| --- | --- |
+| Martin | städning (livesamtal, dela skärm), tolka fråga 3, rapport (syfte, metod, resultat, slutsats) |
+| Vera | Analys och tolkning av fråga 1 och 2 |
+| Carina | Script för fråga 3 |
+| Marcus | Datainläsning, analysfokus samt presentation |
+| Hamed | README och begränsningar |
 
 ## Att köra projektet
 
