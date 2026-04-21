@@ -18,14 +18,17 @@ Det här projektet analyserar e-handelsdata
 2.  Hur skiljer sig ordervärde mellan olika kundsegment?
 3.  Försäljning över tid: totalt, regionalt och kundtyp?
 
-## Att köra projektet
+## Hur projektet körs
 
-Öppna projektet i Rstudio och kör filerna för steg eller kör notebooken
+-   Öppna R-projektet (RStudio).
+-   Installera `install.packages("tidyverse")`.
+-   Kör *rapport.qmd* från början till slut.
+-   Data: ecommerce_orders.csv.
 
 ## Paket
 
 -   tidyverse
-
+-   dplyr
 -   ggplot2
 
 ### Medlem och ansvarsområde
